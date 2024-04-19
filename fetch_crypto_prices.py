@@ -3,10 +3,22 @@
 import requests
 import mysql.connector
 from datetime import datetime
-from crypto_config import CRYPTO_CONFIG
-from db_conn import DB_CONFIG
 import traceback
 
+DB_CONFIG = {
+    'database': 'crypto_watchdog',
+    'user': 'cryptowddbusername',
+    'password': 'Ethereum@2024#$',
+    'host': 'cwddatabase.mysql.database.azure.com',
+    'port': '3306'
+}
+
+CRYPTO_CONFIG = {
+    "btc": "bitcoin",
+    "xrp": "ripple",
+    "eth": "ethereum",
+    "doge": "dogecoin"
+}
 
 # Function to fetch cryptocurrency prices from the API
 def fetch_prices():
