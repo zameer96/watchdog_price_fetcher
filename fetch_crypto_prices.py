@@ -78,14 +78,11 @@ def save_prices(prices_data):
                 
                 conn.commit()
 
-            print("Prices saved successfully.")
-
         except mysql.connector.Error as e:
             conn.rollback()
             print(traceback.format_exc())
             print("Error saving prices:", e)
         finally:
-            print()
             cursor.close()
             conn.close()
 
